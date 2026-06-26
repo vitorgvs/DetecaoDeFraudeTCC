@@ -1,4 +1,4 @@
 # ProjetoFraudeFia
 
-Criar a pasta dados e adicionar os arquivos do projeto
+Criar a pasta Dados e adicionar os arquivos do projeto
 
