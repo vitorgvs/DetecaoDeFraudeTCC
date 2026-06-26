@@ -1,0 +1,5 @@
+{
+    "caminho_treino_transcation":"train_transaction.csv",
+    "caminho_treino_identity":"train_identity.csv"
+
+}
