@@ -1,0 +1,67 @@
+{
+  "model": {
+    "algorithm": "Keras_NeuralNetwork",
+    "library": "tensorflow.keras",
+    "version": "2.15.0",
+    "task": "binary_classification",
+    "architecture": "MLP"
+  },
+  "hyperparameters": {
+    "hidden_dims": [512, 256, 128, 64],
+    "dropout": 0.3,
+    "learning_rate": 0.001,
+    "l2_reg": 1e-4,
+    "batch_size": 1024,
+    "epochs": 100,
+    "patience": 15,
+    "beta_fbeta": 2.0,
+    "class_weight_method": "balanced"
+  },
+  "training": {
+    "target_column": "isFraud",
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratify": true,
+    "validation_split": 0.1,
+    "cv_folds": 5,
+    "early_stopping_monitor": "val_fbeta",
+    "early_stopping_mode": "max",
+    "reduce_lr_factor": 0.5,
+    "reduce_lr_patience": 7,
+    "min_lr": 1e-6,
+    "shuffle": true
+  },
+  "evaluation": {
+    "metrics": [
+      "roc_auc",
+      "precision",
+      "recall",
+      "f1",
+      "precision_recall_auc",
+      "fbeta_score",
+      "confusion_matrix"
+    ],
+    "threshold_optimization": "fbeta",
+    "beta": 2.0,
+    "target_precision": 0.45,
+    "target_recall": 0.80
+  },
+  "preprocessing": {
+    "scaler": "StandardScaler",
+    "missing_strategy": "missing_as_signal",
+    "categorical_encoding": "target_encoding",
+    "target_encoding_smoothing": 10
+  },
+  "output": {
+    "model_path": "fraud_model_dl.keras",
+    "scaler_path": "scaler_dl.pkl",
+    "metrics_path": "training_metrics_dl.json"
+  },
+  "metadata": {
+    "created_at": "2026-06-29",
+    "project": "Fraud Detection - IEEE-CIS",
+    "institution": "FIA Business School - LABDATA",
+    "version": "1.0.0",
+    "description": "Deep Learning model for fraud detection using Keras/TensorFlow"
+  }
+}

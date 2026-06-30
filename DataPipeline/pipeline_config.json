@@ -7,13 +7,18 @@
     "raw_identity": "Dados/train_identity.csv",
     "raw_data": "Dados/raw_data.csv",
     "clean_data": "Dados/clean_data.csv",
-    "abt": "Dados/abt.csv"
+    "abt_data": "Dados/abt.csv"
   },
   "cleaning": {
     "null_threshold": 0.9,
     "correlation_threshold": 0.95,
     "rare_category_threshold": 0.01,
-    "dtype_optimization": true
+    "dtype_optimization": true,
+    "remove_duplicates": true,
+    "transaction_amt_min": 0,
+    "valid_fraud_values": [0, 1],
+    "iqr_multiplier": 1.5,
+    "outlier_target_cols": ["TransactionAmt", "TransactionDT", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "D11", "D12", "D13", "D14", "D15"]
   },
   "abt": {
     "target_column": "isFraud",
@@ -21,6 +26,18 @@
     "random_state": 42,
     "stratify": true,
     "target_encoding_smoothing": 10,
-    "missingness_as_signal": true
+    "missingness_as_signal": true,
+    "label_encode_cols": ["ProductCD", "card4", "card6", "P_emaildomain", "R_emaildomain", "DeviceType", "DeviceInfo", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "id_12", "id_13", "id_14", "id_15", "id_16", "id_17", "id_18", "id_19", "id_20", "id_21", "id_22", "id_23", "id_24", "id_25", "id_26", "id_27", "id_28", "id_29", "id_30", "id_31", "id_32", "id_33", "id_34", "id_35", "id_36", "id_37", "id_38"],
+    "drop_cols_above_pct": 70,
+    "missing_flag_lower_pct": 30,
+    "missing_flag_upper_pct": 70,
+    "apply_standard_scaler": true,
+    "stratify_target": true
+  },
+  "metadata": {
+    "id_column": "TransactionID",
+    "target_column": "isFraud",
+    "time_column": "TransactionDT",
+    "amount_column": "TransactionAmt"
   }
 }
