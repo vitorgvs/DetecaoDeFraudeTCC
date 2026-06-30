@@ -1,1 +1,44 @@
-Dados/
+# Dependencies
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# Data - Original raw files (too large for Git)
+Dados/train_*.csv
+Dados/test_*.csv
+
+# Data - Generated files (too large for Git, regenerate via pipeline)
+Dados/raw_data.csv
+Dados/clean_data.csv
+Dados/abt.csv
+
+# Model artifacts
+*.pkl
+Model/fraud_model.pkl
+Model/training_metrics.json
+
+# Deep learning artifacts
+deep_learning/*.keras
+deep_learning/*.pkl
+deep_learning/*_metrics*.json
+
+# Jupyter outputs
+*.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
