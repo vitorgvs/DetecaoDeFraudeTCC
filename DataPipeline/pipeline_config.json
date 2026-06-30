@@ -1,0 +1,26 @@
+{
+  "project": "Fraud Detection - IEEE-CIS Kaggle Dataset",
+  "institution": "FIA Business School - LABDATA",
+  "version": "1.0.0",
+  "paths": {
+    "raw_transactions": "Dados/train_transaction.csv",
+    "raw_identity": "Dados/train_identity.csv",
+    "raw_data": "Dados/raw_data.csv",
+    "clean_data": "Dados/clean_data.csv",
+    "abt": "Dados/abt.csv"
+  },
+  "cleaning": {
+    "null_threshold": 0.9,
+    "correlation_threshold": 0.95,
+    "rare_category_threshold": 0.01,
+    "dtype_optimization": true
+  },
+  "abt": {
+    "target_column": "isFraud",
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratify": true,
+    "target_encoding_smoothing": 10,
+    "missingness_as_signal": true
+  }
+}
